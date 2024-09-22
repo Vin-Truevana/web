@@ -19,11 +19,20 @@ window.fsAttributes.push([
         data: {
             src: uniqueLocationsArray
         },
-        threshold: 1,
+        threshold: 3,
         debounce: 300,
         searchEngine: "strict",
         resultItem: {
           highlight: true
+        },
+        maxResults: 5,
+        events: {
+          input: {
+            selection: (event) => {
+              const selection = event.detail.selection.value;
+              autoCompleteJS.input.value - selection;
+            }
+          }
         }
     });
     autoCompleteJS.start();
