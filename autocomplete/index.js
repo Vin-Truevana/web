@@ -18,6 +18,12 @@ window.fsAttributes.push([
         selector: "#autoComplete",
         data: {
             src: uniqueLocationsArray
+        },
+        threshold: 1,
+        debounce: 300,
+        searchEngine: "strict",
+        resultItem: {
+          highlight: true
         }
     });
     autoCompleteJS.start();
